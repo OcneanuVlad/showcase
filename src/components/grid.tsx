@@ -13,7 +13,6 @@ function Grid() {
   }
 
   useEffect(() => {
-
     // @ts-ignore
     const timeline = new ScrollTimeline({
       scrollSource: document.documentElement,
@@ -22,12 +21,11 @@ function Grid() {
     });
 
     document.querySelectorAll(".column-reverse").forEach((column: any) => {
-
       column.style.flexDirection = "column-reverse";
 
       column.animate(
         {
-          transform: ["translateY(calc(-100% + 20vh))", "translateY(calc(100% - 100vh))"],
+          transform: ["translateY(calc(-100% + 20vh))", "translateY(calc(100% - 180vh))"],
         },
         {
           duration: 1,

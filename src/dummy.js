@@ -55,28 +55,25 @@ export const dummy = [
         link: "cristi.com"
     },
     {
-        name: "12",
+        name: "8",
         client: "cristi",
         link: "cristi.com"
     },
     {
-        name: "13",
+        name: "9",
         client: "cristi",
         link: "cristi.com"
     },
     {
-        name: "14",
+        name: "10",
         client: "cristi",
         link: "cristi.com"
     },
     {
-        name: "15",
+        name: "11",
         client: "cristi",
         link: "cristi.com"
     },
-    {
-        name: "16",
-        client: "cristi",
-        link: "cristi.com"
-    },
+
+
 ];

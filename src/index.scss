@@ -3,15 +3,17 @@
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 
-body {
-  font-family: "Montserrat", sans-serif;
-  color: rgb(239, 239, 239);
-  background-color: rgb(22, 22, 22);
+:root {
+  --main: #050201;
+  --gradient1: #12100e;
+  --gradient2: #1d1a19;
+  --contrast: #e5a834;
 }
 
-.nav {
-  background-color: rgba(0, 0, 0, 0.304);
-  backdrop-filter: blur(5px);
+body {
+  font-family: "Montserrat", sans-serif;
+  color: var(--contrast);
+  background-color: var(--main);
 }
 
 .w-32p {
@@ -22,6 +24,67 @@ body {
   overflow: hidden;
 
   .col-2 {
-    transform: translateY(calc(35%));
+    margin-top: 80vh;
   }
+}
+
+.nav-button {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  overflow: visible;
+  position: relative;
+
+  span {
+    display: block;
+    position: absolute;
+    left: -15px;
+    height: 4px;
+    width: 4px;
+    border-radius: 50%;
+    background-color: var(--contrast);
+    transition: 0.3s;
+  }
+}
+
+.nav-button:hover {
+
+  span {
+    height: 1px;
+    width: calc(100% + 30px);
+    border-radius: 0%;
+  }
+}
+
+.nav-button-active {
+
+  span {
+    height: 1px;
+    width: calc(100% + 30px);
+    border-radius: 0%;
+  }
+}
+
+.work {
+  background-image: linear-gradient(135deg, var(--gradient1), var(--gradient2));
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--contrast);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--contrast);
 }
