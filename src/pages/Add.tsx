@@ -1,7 +1,9 @@
 function Add() {
     return (
         <div>
-
+            <form>
+                
+            </form>
         </div>
     )
 }
