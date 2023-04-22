@@ -35,6 +35,10 @@ body {
     background-color: var(--main);
     padding-bottom: 20px;
   }
+
+  .column-reverse {
+    transform: translateY(100%);
+  }
 }
 
 .block-container {

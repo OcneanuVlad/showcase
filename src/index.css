@@ -34,6 +34,9 @@ body {
   background-color: var(--main);
   padding-bottom: 20px;
 }
+.col-container .column-reverse {
+  transform: translateY(100%);
+}
 
 .block-container {
   position: fixed;

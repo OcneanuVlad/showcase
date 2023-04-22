@@ -1,79 +1,34 @@
 export const dummy = [
     {
-        name: "1",
-        client: "cristi",
+        title: "1",
         link: "cristi.com"
     },
     {
-        name: "2",
-        client: "cristi",
+        title: "1",
         link: "cristi.com"
     },
     {
-        name: "3",
-        client: "cristi",
+        title: "1",
         link: "cristi.com"
     },
     {
-        name: "4",
-        client: "cristi",
+        title: "1",
         link: "cristi.com"
     },
     {
-        name: "5",
-        client: "cristi",
+        title: "1",
         link: "cristi.com"
     },
     {
-        name: "6",
-        client: "cristi",
+        title: "1",
         link: "cristi.com"
     },
     {
-        name: "7",
-        client: "cristi",
+        title: "1",
         link: "cristi.com"
     },
     {
-        name: "8",
-        client: "cristi",
+        title: "1",
         link: "cristi.com"
     },
-    {
-        name: "9",
-        client: "cristi",
-        link: "cristi.com"
-    },
-    {
-        name: "10",
-        client: "cristi",
-        link: "cristi.com"
-    },
-    {
-        name: "11",
-        client: "cristi",
-        link: "cristi.com"
-    },
-    {
-        name: "8",
-        client: "cristi",
-        link: "cristi.com"
-    },
-    {
-        name: "9",
-        client: "cristi",
-        link: "cristi.com"
-    },
-    {
-        name: "10",
-        client: "cristi",
-        link: "cristi.com"
-    },
-    {
-        name: "11",
-        client: "cristi",
-        link: "cristi.com"
-    },
-
-
 ];

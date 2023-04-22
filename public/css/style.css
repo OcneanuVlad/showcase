@@ -835,6 +835,11 @@ body {
   padding-bottom: 20px;
 }
 
+.col-container .column-reverse {
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
 .block-container {
   position: fixed;
   display: flex;
