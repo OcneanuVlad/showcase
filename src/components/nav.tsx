@@ -19,7 +19,6 @@ function Nav() {
   }
 
   const location = useLocation();
-  console.log(location);
 
   return (
     <div className="nav w-32 fixed top-0 left-0 flex flex-col items-start justify-center gap-5 h-screen pl-10">

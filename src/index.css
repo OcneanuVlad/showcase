@@ -25,6 +25,14 @@ body {
   margin-top: 12px;
   margin-bottom: 12px;
 }
+.work .workImage {
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.work:hover .workImage {
+  opacity: 0%;
+}
 
 .col-container {
   overflow: hidden;

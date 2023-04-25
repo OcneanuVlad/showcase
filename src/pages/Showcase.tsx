@@ -2,29 +2,33 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { dummy } from "../dummy";
 import Work from "../components/work";
-import { useEffect, useState, useLayoutEffect } from "react";
+import { useLayoutEffect, useEffect } from "react";
 import "https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js";
 import { WorkType } from "../types/WorkType";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function Showcase() {
-  const [data, setData] = useState<Array<WorkType>>([]);
-
-  console.log(data);
-
+function Showcase({ data, updateData }: { data: WorkType[]; updateData: any }) {
   function WorkDisplay(data: any) {
-    return <Work title={data.title} link={data.link} />;
+    return <Work id={data.id} title={data.title} link={data.link} hidden={data.hidden} filePath={data.file} updateCurrentData={updateCurrentData} />;
+  }
+
+  function updateCurrentData() {
+    fetchData();
   }
 
   useEffect(() => {
+    fetchData();
+  }, []);
+
+  function fetchData() {
     fetch("http://localhost:3000/work")
       .then((response) => response.json())
       .then((data) => {
-        setData(data);
+        updateData(data);
       })
       .catch((error) => console.error(error));
-  }, []);
+  }
 
   useLayoutEffect(() => {
     // @ts-ignore

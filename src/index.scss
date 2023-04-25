@@ -25,6 +25,18 @@ body {
   background-image: linear-gradient(135deg, var(--gradient1), var(--gradient2));
   margin-top: 12px;
   margin-bottom: 12px;
+
+  .workImage {
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+}
+
+.work:hover {
+
+  .workImage {
+    opacity: 0%;
+  }
 }
 
 .col-container {
