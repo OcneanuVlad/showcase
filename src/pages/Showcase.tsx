@@ -1,16 +1,25 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { dummy } from "../dummy";
 import Work from "../components/work";
 import { useLayoutEffect, useEffect } from "react";
 import "https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js";
 import { WorkType } from "../types/WorkType";
+import { backEndUrl } from "../Url";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function Showcase({ data, updateData }: { data: WorkType[]; updateData: any }) {
   function WorkDisplay(data: any) {
-    return <Work id={data.id} title={data.title} link={data.link} hidden={data.hidden} filePath={data.file} updateCurrentData={updateCurrentData} />;
+    return (
+      <Work
+        id={data.id}
+        title={data.title}
+        link={data.link}
+        hidden={data.hidden}
+        filePath={data.file}
+        updateCurrentData={updateCurrentData}
+      />
+    );
   }
 
   function updateCurrentData() {
@@ -22,7 +31,7 @@ function Showcase({ data, updateData }: { data: WorkType[]; updateData: any }) {
   }, []);
 
   function fetchData() {
-    fetch("http://localhost:3000/work")
+    fetch(`${backEndUrl}work`)
       .then((response) => response.json())
       .then((data) => {
         updateData(data);
@@ -52,14 +61,11 @@ function Showcase({ data, updateData }: { data: WorkType[]; updateData: any }) {
         }
       );
     });
-
-    window.scrollTo(0, 0);
-
     const col2 = document.querySelector(".col-2")?.firstChild!;
     if (col2 instanceof HTMLElement) {
       col2.style.marginTop = "0px";
     }
-  });
+  }, []);
 
   return (
     <>

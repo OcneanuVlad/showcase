@@ -4,8 +4,8 @@
 @tailwind utilities;
 :root {
   --main: #010101;
-  --gradient1: #12100e;
-  --gradient2: #1d1a19;
+  --gradient1: #151411;
+  --gradient2: #262321;
   --contrast: #d58943;
 }
 
@@ -20,14 +20,116 @@ body {
   width: 32%;
 }
 
-.work {
+.formContainer {
+  height: 90vh;
+}
+.formContainer .addForm {
   background-image: linear-gradient(135deg, var(--gradient1), var(--gradient2));
+  color: var(--contrast);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  height: 70%;
+  width: 40%;
+  transition: border 0.3s;
+}
+.formContainer .addForm input {
+  padding: 10px;
+  border: 2px solid;
+  border-image-slice: 1;
+  border-width: 2px;
+  border-image-source: linear-gradient(90deg, transparent, transparent);
+  background-color: transparent;
+  outline: none;
+  width: 80%;
+}
+.formContainer .addForm input:focus {
+  border-image-source: linear-gradient(90deg, var(--contrast), transparent);
+}
+.formContainer .addForm input::-moz-placeholder {
+  color: var(--contrast);
+}
+.formContainer .addForm input::placeholder {
+  color: var(--contrast);
+}
+.formContainer .addForm input:-webkit-autofill,
+.formContainer .addForm input:-webkit-autofill:hover,
+.formContainer .addForm input:-webkit-autofill:focus,
+.formContainer .addForm input:-webkit-autofill:active {
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.formContainer .addForm input:-webkit-autofill {
+  -webkit-text-fill-color: var(--contrast) !important;
+}
+.formContainer .addForm .submit {
+  margin-top: 50px;
+  background-color: var(--main);
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 1000;
+}
+.formContainer .addForm .submit:hover {
+  background-color: var(--contrast);
+  color: var(--main);
+}
+.formContainer .addForm input[type=file]::file-selector-button {
+  display: none;
+}
+.formContainer .addForm input[type=file]:focus {
+  border-image-source: linear-gradient(90deg, transparent, transparent);
+}
+.formContainer .addForm div {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.formContainer .addForm div label {
+  background-color: var(--main);
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 1000;
+  padding: 10px;
+}
+.formContainer .addForm div label:hover {
+  background-color: var(--contrast);
+  color: var(--main);
+}
+.formContainer .addForm div input {
+  margin-top: 10px;
+  padding: 0px;
+  border: 0px;
+  margin-left: 10px;
+  pointer-events: none;
+}
+
+.work {
+  background-color: var(--contrast);
   margin-top: 12px;
   margin-bottom: 12px;
+  color: var(--main) !important;
 }
 .work .workImage {
-  transition: opacity 0.3s;
+  transition: opacity 0.4s;
   pointer-events: none;
+}
+.work .workButton {
+  width: auto;
+  overflow: hidden;
+  border-bottom: 2px solid var(--main);
+  padding: 0.8rem;
+  line-height: 0.8rem;
+  transition: background-color 0.35s, color 0.35s, border-radius 0.35s;
+}
+.work .workButton:hover {
+  background-color: var(--main);
+  color: var(--contrast);
+  border-radius: 2rem;
 }
 
 .work:hover .workImage {
@@ -52,7 +154,7 @@ body {
   height: 200vh;
   z-index: 100;
   width: 100vw;
-  bottom: -200vh;
+  bottom: 0vh;
 }
 .block-container .block {
   width: 33.4%;
@@ -64,6 +166,43 @@ body {
 }
 .block-container .block:nth-child(3) {
   margin-top: 40vh;
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 150;
+  color: var(--main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+.preloader .preload-container {
+  display: flex;
+  position: relative;
+  height: auto;
+  width: auto;
+  justify-content: center;
+  align-items: center;
+  transform: scale(2);
+  overflow: hidden;
+}
+.preloader .preload-container .preload-text {
+  margin-left: 5px;
+  margin-right: 5px;
+  font-weight: 750;
+  transform: translateY(30px);
+}
+.preloader .preload-container .underline {
+  display: block;
+  width: 0;
+  background-color: var(--main);
+  height: 2px;
+  position: absolute;
+  bottom: 0;
 }
 
 .nav-button {

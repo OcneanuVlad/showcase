@@ -10,7 +10,7 @@ function Nav() {
 
   function Navigate(event: any) {
     if (location.pathname !== event.target.value) {
-      gsap.fromTo(".block-container", { y: "0%" }, { y: "-200%", duration: 0.8 });
+      gsap.fromTo(".block-container", { y: "100%" }, { y: "-100%", duration: 0.8 });
 
       setTimeout(() => {
         navigate(event.target.value);

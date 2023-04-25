@@ -1,6 +1,7 @@
 import { WorkType } from "../types/WorkType";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { backEndUrl } from "../Url";
 
 function Edit() {
   const { id } = useParams<string>();
@@ -8,6 +9,8 @@ function Edit() {
   const [title, setTitle] = useState<string>("");
   const [link, setLink] = useState<string>("");
   const [file, setFile] = useState<string>("");
+  
+  const navigate = useNavigate();
 
   useEffect(() => {
     const data: WorkType[] = JSON.parse(localStorage.getItem("data") || "[]");
@@ -16,7 +19,7 @@ function Edit() {
 
     setTitle(selectedWork.title);
     setLink(selectedWork.link);
-    setFile(selectedWork.file)
+    setFile(selectedWork.file);
   }, [id]);
 
   const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -34,7 +37,7 @@ function Edit() {
       formData.append("title", title);
       formData.append("link", link);
       formData.append("file", e.currentTarget.file.files[0]);
-      const response = await fetch(`http://localhost:3000/work/${id}`, {
+      const response = await fetch(`${backEndUrl}work/${id}`, {
         method: "PUT",
         body: formData,
       });
@@ -46,20 +49,25 @@ function Edit() {
     } catch (error) {
       console.error(error);
     } finally {
-      window.location.href = "http://localhost:3001/";
+      gsap.fromTo(".block-container", { y: "100%" }, { y: "-100%", duration: 0.8 });
+      setTimeout(() => {
+        navigate("/");
+      }, 200);
     }
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>Title:</label>
-        <input value={title} onChange={handleTitleChange} type="text" name={"title"}></input>
-        <label>Link:</label>
-        <input value={link} onChange={handleLinkChange} type="text" name={"link"}></input>
-        <label>Image:</label>
-        <input type="file" accept="image/*" name="file" defaultValue={file} />
-        <input type="submit" name="submit"></input>
+    <div className="formContainer w-screen flex flex-col justify-around items-center">
+      <p className="font-extrabold text-3xl">Edit Project details</p>
+      <form className="addForm" onSubmit={handleSubmit}>
+        <input value={title} onChange={handleTitleChange} type="text" name={"title"} placeholder="Project Title" required></input>
+        <input value={link} onChange={handleLinkChange} type="url" name={"link"} placeholder="Project Link" required></input>
+        <div>
+          <label htmlFor="fileInput">Select Image</label>
+          <input id="fileInput" type="file" accept="image/*" name="file" required />
+          <p className="ml-3 mt-1 text-xs font-thin opacity-60">If you don't select a file, the Image will not change*</p>
+        </div>
+        <input className="submit" type="submit" name="submit" defaultValue={file}></input>
       </form>
     </div>
   );
