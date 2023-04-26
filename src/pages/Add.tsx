@@ -35,7 +35,6 @@ function Add() {
     } catch (error) {
       console.error(error);
     } finally {
-      console.log("hai");
       gsap.fromTo(".block-container", { y: "100%" }, { y: "-100%", duration: 0.8 });
       setTimeout(() => {
         navigate("/");

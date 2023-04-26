@@ -787,10 +787,6 @@ video {
   width: 9rem;
 }
 
-.w-5\/12{
-  width: 41.666667%;
-}
-
 .w-6\/12{
   width: 50%;
 }
@@ -801,10 +797,6 @@ video {
 
 .w-screen{
   width: 100vw;
-}
-
-.w-4\/12{
-  width: 33.333333%;
 }
 
 .-translate-x-1\/2{
@@ -858,10 +850,6 @@ video {
 
 .gap-5{
   gap: 1.25rem;
-}
-
-.overflow-y-hidden{
-  overflow-y: hidden;
 }
 
 .border{
@@ -1100,20 +1088,6 @@ html {
   display: flex;
 }
 
-@media screen and (max-width: 1000px) {
-  .hiddenCol {
-    min-width: 60vw;
-  }
-
-  .addForm {
-    width: 100% !important;
-  }
-
-  .initial-message {
-    display: none;
-  }
-}
-
 .work {
   background-color: var(--contrast);
   margin-top: 12px;
@@ -1171,74 +1145,6 @@ html {
   right: 1.25rem;
   padding: 0.75rem;
   border-bottom: 2px solid var(--main);
-}
-
-@media screen and (max-width: 1300px) and (min-width: 1000px) {
-  .work .workButton:nth-child(3){
-    top: 0.5rem;
-    left: 0.5rem;
-    padding: 0.5rem;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
-
-  .work .workButton:nth-child(4){
-    top: 0.5rem;
-    right: 0.5rem;
-    padding: 0.5rem;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
-
-  .work .workButton:nth-child(5){
-    bottom: 0.5rem;
-    left: 0.5rem;
-    padding: 0.5rem;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
-
-  .work .workButton:nth-child(6){
-    bottom: 0.5rem;
-    right: 0.5rem;
-    padding: 0.5rem;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .work .workButton:nth-child(3){
-    top: 0.5rem;
-    left: 0.5rem;
-    padding: 0.25rem;
-    font-size: 0.75rem;
-    line-height: 1rem;
-  }
-
-  .work .workButton:nth-child(4){
-    top: 0.5rem;
-    right: 0.5rem;
-    padding: 0.25rem;
-    font-size: 0.75rem;
-    line-height: 1rem;
-  }
-
-  .work .workButton:nth-child(5){
-    bottom: 0.5rem;
-    left: 0.5rem;
-    padding: 0.25rem;
-    font-size: 0.75rem;
-    line-height: 1rem;
-  }
-
-  .work .workButton:nth-child(6){
-    bottom: 0.5rem;
-    right: 0.5rem;
-    padding: 0.25rem;
-    font-size: 0.75rem;
-    line-height: 1rem;
-  }
 }
 
 .work:hover .workButton {
@@ -1364,30 +1270,6 @@ html {
   border-radius: 50%;
   background-color: var(--contrast);
   transition: width 0.3s, height 0.3s, border-radius 0.3s;
-}
-
-@media screen and (max-width: 600px) {
-  .copyright {
-    -webkit-transform: rotate(-90deg);
-            transform: rotate(-90deg);
-    bottom: 100px;
-    right: -50px;
-  }
-
-  .nav{
-    gap: 0px;
-  }
-
-  .nav .nav-button {
-    margin-left: -40px;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
-    margin-top: 75px;
-    margin-bottom: 75px;
-  }
 }
 
 .nav-button:hover span {
@@ -1526,9 +1408,113 @@ html {
   background: var(--contrast);
 }
 
+@media screen and (max-width: 1000px) {
+  .hiddenCol {
+    min-width: 60vw;
+  }
+
+  .addForm {
+    width: 100% !important;
+  }
+
+  .initial-message {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1300px) and (min-width: 1000px) {
+  .workButton:nth-child(3){
+    top: 0.5rem;
+    left: 0.5rem;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .workButton:nth-child(4){
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .workButton:nth-child(5){
+    bottom: 0.5rem;
+    left: 0.5rem;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .workButton:nth-child(6){
+    bottom: 0.5rem;
+    right: 0.5rem;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .workButton:nth-child(3){
+    top: 0.5rem;
+    left: 0.5rem;
+    padding: 0.25rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  .workButton:nth-child(4){
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.25rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  .workButton:nth-child(5){
+    bottom: 0.5rem;
+    left: 0.5rem;
+    padding: 0.25rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  .workButton:nth-child(6){
+    bottom: 0.5rem;
+    right: 0.5rem;
+    padding: 0.25rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  .copyright {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+    bottom: 100px;
+    right: -50px;
+  }
+
+  .nav{
+    gap: 0px;
+  }
+
+  .nav .nav-button {
+    margin-left: -40px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    margin-top: 75px;
+    margin-bottom: 75px;
+  }
+}
+
 @media (min-width: 768px){
-  .md\:w-screen{
-    width: 100vw;
+  .md\:w-10\/12{
+    width: 83.333333%;
   }
 
   .md\:px-36{

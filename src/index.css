@@ -117,17 +117,6 @@ html {
   display: flex;
 }
 
-@media screen and (max-width: 1000px) {
-  .hiddenCol {
-    min-width: 60vw;
-  }
-  .addForm {
-    width: 100% !important;
-  }
-  .initial-message {
-    display: none;
-  }
-}
 .work {
   background-color: var(--contrast);
   margin-top: 12px;
@@ -170,34 +159,6 @@ html {
 .work .workButton:nth-child(6) {
   @apply bottom-5 right-5 p-3;
   border-bottom: 2px solid var(--main);
-}
-@media screen and (max-width: 1300px) and (min-width: 1000px) {
-  .work .workButton:nth-child(3) {
-    @apply top-2 left-2 p-2 text-sm;
-  }
-  .work .workButton:nth-child(4) {
-    @apply top-2 right-2 p-2 text-sm;
-  }
-  .work .workButton:nth-child(5) {
-    @apply bottom-2 left-2 p-2 text-sm;
-  }
-  .work .workButton:nth-child(6) {
-    @apply bottom-2 right-2 p-2 text-sm;
-  }
-}
-@media screen and (max-width: 600px) {
-  .work .workButton:nth-child(3) {
-    @apply top-2 left-2 p-1 text-xs;
-  }
-  .work .workButton:nth-child(4) {
-    @apply top-2 right-2 p-1 text-xs;
-  }
-  .work .workButton:nth-child(5) {
-    @apply bottom-2 left-2 p-1 text-xs;
-  }
-  .work .workButton:nth-child(6) {
-    @apply bottom-2 right-2 p-1 text-xs;
-  }
 }
 
 .work:hover .workButton {
@@ -309,25 +270,6 @@ html {
   transition: width 0.3s, height 0.3s, border-radius 0.3s;
 }
 
-@media screen and (max-width: 600px) {
-  .copyright {
-    transform: rotate(-90deg);
-    bottom: 100px;
-    right: -50px;
-  }
-  .nav {
-    @apply gap-0;
-  }
-  .nav .nav-button {
-    margin-left: -40px;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    transform: rotate(90deg);
-    margin-top: 75px;
-    margin-bottom: 75px;
-  }
-}
 .nav-button:hover span {
   height: 1px;
   width: calc(100% + 30px);
@@ -421,4 +363,63 @@ html {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: var(--contrast);
+}
+
+@media screen and (max-width: 1000px) {
+  .hiddenCol {
+    min-width: 60vw;
+  }
+  .addForm {
+    width: 100% !important;
+  }
+  .initial-message {
+    display: none;
+  }
+}
+@media screen and (max-width: 1300px) and (min-width: 1000px) {
+  .workButton:nth-child(3) {
+    @apply top-2 left-2 p-2 text-sm;
+  }
+  .workButton:nth-child(4) {
+    @apply top-2 right-2 p-2 text-sm;
+  }
+  .workButton:nth-child(5) {
+    @apply bottom-2 left-2 p-2 text-sm;
+  }
+  .workButton:nth-child(6) {
+    @apply bottom-2 right-2 p-2 text-sm;
+  }
+}
+@media screen and (max-width: 600px) {
+  .workButton:nth-child(3) {
+    @apply top-2 left-2 p-1 text-xs;
+  }
+  .workButton:nth-child(4) {
+    @apply top-2 right-2 p-1 text-xs;
+  }
+  .workButton:nth-child(5) {
+    @apply bottom-2 left-2 p-1 text-xs;
+  }
+  .workButton:nth-child(6) {
+    @apply bottom-2 right-2 p-1 text-xs;
+  }
+}
+@media screen and (max-width: 600px) {
+  .copyright {
+    transform: rotate(-90deg);
+    bottom: 100px;
+    right: -50px;
+  }
+  .nav {
+    @apply gap-0;
+  }
+  .nav .nav-button {
+    margin-left: -40px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    transform: rotate(90deg);
+    margin-top: 75px;
+    margin-bottom: 75px;
+  }
 }/*# sourceMappingURL=index.css.map */

@@ -24,12 +24,10 @@ function App() {
           const images = Array.from(document.getElementsByClassName("workImage") as HTMLCollectionOf<HTMLElement>);
           images.forEach((image) => {
             image.style.opacity = "0%";
-            console.log("bat");
           });
           setTimeout(() => {
             images.forEach((image) => {
               image.style.opacity = "100%";
-              console.log("tab");
             });
           }, 600);
         })
@@ -43,7 +41,6 @@ function App() {
               cols.forEach((col) => {
                 col.style.opacity = "100%";
               });
-              console.log("hei");
             });
           }, 500);
         })

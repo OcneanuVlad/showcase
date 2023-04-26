@@ -83,9 +83,9 @@ function Work({
       });
 
       if (response.ok) {
-        console.log("Work deleted successfully");
+        console.log("Work hidden successfully");
       } else {
-        console.error("Work deletion failed");
+        console.error("Work hidden failed");
       }
     } catch (error) {
       console.error(error);

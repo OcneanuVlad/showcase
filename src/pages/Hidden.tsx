@@ -36,7 +36,7 @@ function Hidden({ data, updateData }: { data: WorkType[]; updateData: any }) {
     return <div className="hiddenCol flex flex-col w-6/12 h-auto">{data.map((work) => WorkDisplay(work))}</div>;
   } else {
     return (
-      <p className="absolute top-1/2 -translate-y-1/2 text-center md:text-4xl text-2xl font-extrabold w-6/12 md:w-screen">
+      <p className="absolute top-1/2 -translate-y-1/2 text-center md:text-4xl text-2xl font-extrabold w-6/12 md:w-10/12">
         There are no hidden entries
       </p>
     );
