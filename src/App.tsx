@@ -21,20 +21,31 @@ function App() {
         .fromTo(".preload-text", { y: "30px" }, { y: 0, stagger: 0.5 })
         .add(() => {
           window.scrollTo(0, document.body.scrollHeight);
-          const images = Array.from(document.getElementsByClassName(".workImage") as HTMLCollectionOf<HTMLElement>);
+          const images = Array.from(document.getElementsByClassName("workImage") as HTMLCollectionOf<HTMLElement>);
           images.forEach((image) => {
-            image.style.opacity = "0";
+            image.style.opacity = "0%";
+            console.log("bat");
           });
           setTimeout(() => {
             images.forEach((image) => {
-              image.style.opacity = "0";
+              image.style.opacity = "100%";
+              console.log("tab");
             });
-          }, 500);
+          }, 600);
         })
         .to(".preloader", { opacity: 0, delay: 1 })
         .to(".preloader", { display: "none", duration: 0 })
         .add(() => {
           window.scrollTo(0, 1);
+          setTimeout(() => {
+            window.addEventListener("scroll", (event) => {
+              const cols = Array.from(document.getElementsByClassName("column") as HTMLCollectionOf<HTMLElement>);
+              cols.forEach((col) => {
+                col.style.opacity = "100%";
+              });
+              console.log("hei");
+            });
+          }, 500);
         })
         .fromTo(".block-container", { y: "0vh" }, { y: "-100%", duration: 1.5, delay: 0.5 });
     } else {
@@ -55,7 +66,7 @@ function App() {
   }
 
   return (
-    <div className="flex justify-center px-36 min-h-screen">
+    <div className="flex justify-center px-16 md:px-36 min-h-screen">
       <Nav />
       <Routes>
         <Route path="/" element={<Showcase data={shownData} updateData={updateData} />}></Route>
@@ -76,7 +87,7 @@ function App() {
           <div className="underline"></div>
         </div>
       </div>
-      <p className="w-36 fixed bottom-5 right-7 text-xs font-base">© 2023 Ocneanu Vlad</p>
+      <p className="copyright w-36 fixed bottom-5 right-7 text-xs font-base">© 2023 Ocneanu Vlad</p>
     </div>
   );
 }

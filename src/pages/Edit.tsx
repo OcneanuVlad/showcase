@@ -58,13 +58,13 @@ function Edit() {
 
   return (
     <div className="formContainer w-screen flex flex-col justify-around items-center">
-      <p className="font-extrabold text-3xl">Edit Project details</p>
+      <p className="font-extrabold md:text-3xl text-xl text-center mt-20">Edit Project details</p>
       <form className="addForm" onSubmit={handleSubmit}>
         <input value={title} onChange={handleTitleChange} type="text" name={"title"} placeholder="Project Title" required></input>
         <input value={link} onChange={handleLinkChange} type="url" name={"link"} placeholder="Project Link" required></input>
         <div>
           <label htmlFor="fileInput">Select Image</label>
-          <input id="fileInput" type="file" accept="image/*" name="file" required />
+          <input id="fileInput" type="file" accept="image/*" name="file" />
           <p className="ml-3 mt-1 text-xs font-thin opacity-60">If you don't select a file, the Image will not change*</p>
         </div>
         <input className="submit" type="submit" name="submit" defaultValue={file}></input>

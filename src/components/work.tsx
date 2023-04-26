@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { backEndUrl } from "../Url";
+import { useEffect } from "react";
 
 function Work({
   id,
@@ -24,6 +25,32 @@ function Work({
       navigate(`/edit/${id}`);
     }, 200);
   }
+
+  useEffect(() => {
+    const workButtons = Array.from(document.getElementsByClassName("workButton") as HTMLCollectionOf<HTMLElement>);
+    workButtons.forEach((button) => {
+      button.addEventListener("transitionend", (event) => {
+        if (event.propertyName === "line-height") {
+          if (event.target instanceof Element) {
+            let image: Element | null = null;
+            let currentSibling = event.target.previousElementSibling;
+            while (currentSibling) {
+              if (currentSibling.classList.contains("workImage")) {
+                image = currentSibling as Element;
+                break;
+              }
+              currentSibling = currentSibling.previousElementSibling;
+            }
+            if (window.getComputedStyle(image!).getPropertyValue("opacity") === "0") {
+              button.style.pointerEvents = "auto";
+            } else {
+              button.style.pointerEvents = "none";
+            }
+          }
+        }
+      });
+    });
+  }, []);
 
   const img = new Image();
   img.src = `${backEndUrl}${filePath.replace(/\\/g, "/")}`;
@@ -75,17 +102,17 @@ function Work({
         alt="projectImage"
       />
       <p className="absolute font-bold text-xl">{title}</p>
-      <a className="workButton absolute top-8 left-8" href={link} target="blank">
-        Check it out
+      <a className="workButton" href={link} target="blank">
+        View
       </a>
-      <button onClick={Edit} className="workButton absolute top-8 right-8">
+      <button onClick={Edit} className="workButton">
         Edit
       </button>
-      <button onClick={Delete} className="workButton absolute bottom-8 left-8">
+      <button onClick={Delete} className="workButton">
         Delete
       </button>
-      <button onClick={HideToggle} className="workButton absolute bottom-8 right-8">
-        {hidden ? "Show" : "Hide"}
+      <button onClick={HideToggle} className="workButton">
+        {hidden ? "Unhide" : "Hide"}
       </button>
     </div>
   );

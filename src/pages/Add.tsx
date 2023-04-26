@@ -35,15 +35,16 @@ function Add() {
     } catch (error) {
       console.error(error);
     } finally {
+      console.log("hai");
       gsap.fromTo(".block-container", { y: "100%" }, { y: "-100%", duration: 0.8 });
       setTimeout(() => {
         navigate("/");
       }, 200);
     }
-  };
+  }
   return (
     <div className="formContainer w-screen flex flex-col justify-around items-center">
-      <p className="font-extrabold text-3xl">Enter Project details</p>
+      <p className="font-extrabold md:text-3xl text-xl text-center mt-20">Enter Project details</p>
       <form className="addForm" onSubmit={handleSubmit}>
         <input value={title} onChange={handleTitleChange} type="text" name={"title"} placeholder="Project Title" required></input>
         <input value={link} onChange={handleLinkChange} type="url" name={"link"} placeholder="Project Link" required></input>
